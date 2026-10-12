@@ -1,0 +1,35 @@
+# Conda environment for MFTC (tested on Linux, NVIDIA Quadro RTX 8000, CUDA 12.1).
+#
+#   conda env create -f environment.yml
+#   conda activate mftc
+#   pip install mamba-ssm==2.2.4 --no-build-isolation
+#
+# mamba-ssm is installed in a second step because it needs PyTorch to be already installed
+# (see README.md, "Installation").
+name: mftc
+channels:
+  - nvidia/label/cuda-12.1.1
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  # CUDA compiler and C++ toolchain: required only if mamba-ssm has to be compiled from source
+  # (when no prebuilt wheel matches the system).
+  - cuda-toolkit=12.1.1
+  - gxx_linux-64=11
+  - ninja
+  - packaging
+  - setuptools
+  - wheel
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.5.1
+      - numpy==2.2.6
+      - pandas==2.3.3
+      - scipy==1.15.3
+      - scikit-learn==1.7.2
+      - tslearn==0.9.0
+      - threadpoolctl==3.7.0
+      - matplotlib==3.10.9     # analysis plots
+      - einops==0.8.2          # mamba-ssm dependency
+      - transformers==4.50.0   # mamba-ssm dependency
