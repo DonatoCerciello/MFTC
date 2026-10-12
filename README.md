@@ -131,7 +131,7 @@ Completed runs are skipped, so an interrupted experiment can be restarted with t
 
 
 ## 🗂️ Data and Resources
-The data used in this study are available in the [UCR Time Series Classification Archive](https://timeseriesclassification.com/index.php).
+The data used in this study are available in the [UEA Time Series Classification Archive](https://timeseriesclassification.com/index.php).
 
 ## 📝 Citation
 
