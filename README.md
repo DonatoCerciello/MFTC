@@ -135,15 +135,7 @@ The data used in this study are available in the [UEA Time Series Classification
 
 ## 📝 Citation
 
-The paper is currently under review. If you use this code, please cite:
-
-```bibtex
-@article{cerciello2026mftc,
-  title   = {MFTC: Mamba-based Fuzzy Teacher-guided Clustering for multivariate time series},
-  author  = {Cerciello, Donato and Schiavo, Leonardo and Panizo-Lledot, Angel and Huertas Tato, Javier and Camacho, David},
-  year    = {2026},
-  note    = {Under review}
-}
+The paper is currently under review. 
 ```
 
 ## 💎 Acknowledgment
