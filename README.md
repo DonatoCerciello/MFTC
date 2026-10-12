@@ -136,7 +136,7 @@ The data used in this study are available in the [UEA Time Series Classification
 ## 📝 Citation
 
 The paper is currently under review. 
-```
+
 
 ## 💎 Acknowledgment
 
