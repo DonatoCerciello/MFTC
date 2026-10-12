@@ -1,5 +1,12 @@
 # MFTC: Mamba-based Fuzzy Teacher-guided Clustering for multivariate time series
 
+[![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![CUDA](https://img.shields.io/badge/CUDA-12.1-76B900?logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-toolkit)
+[![mamba-ssm](https://img.shields.io/badge/mamba--ssm-2.2.4-blueviolet)](https://github.com/state-spaces/mamba)
+[![Conda](https://img.shields.io/badge/environment-conda-44A833?logo=anaconda&logoColor=white)](environment.yml)
+[![Data](https://img.shields.io/badge/data-UEA%20archive-orange)](https://timeseriesclassification.com)
+
 Official implementation of **MFTC**, a framework for inductive clustering of multivariate time
 series. MFTC learns a clustering space without labels and assigns unseen series using only
 quantities fitted on the training collection.
@@ -22,7 +29,7 @@ The method works in two stages:
 At inference, a test series is encoded without masking and assigned to the closest fuzzy
 prototype. The training mean and the prototypes are never refitted on the test data.
 
-## Repository structure
+## 📁 Repository structure
 
 ```
 MFTC/
@@ -39,7 +46,7 @@ MFTC/
     └── analysis.py     # silhouette and kNN accuracy, t-SNE projections, loss curves
 ```
 
-## Installation
+## ⚙️ Installation
 
 Requirements: Linux, an NVIDIA GPU, and conda (Miniconda or Anaconda).
 The code was developed with Python 3.10, PyTorch 2.5.1 (CUDA 12.1) and `mamba-ssm` 2.2.4.
@@ -65,7 +72,7 @@ export TORCH_CUDA_ARCH_LIST="7.5"   # 7.5 Turing (RTX 20xx, Quadro RTX), 8.0 A10
 MAMBA_FORCE_BUILD=TRUE pip install mamba-ssm==2.2.4 --no-build-isolation
 ```
 
-## Data
+## 📊 Data
 
 MFTC uses the multivariate datasets of the
 [UEA archive](https://timeseriesclassification.com) in ARFF format, with one file per dimension.
@@ -88,7 +95,7 @@ available on the archive website. The original train/test splits are used. Missi
 shorter series are zero-filled, and every series and channel is standardized independently.
 Labels are used only to set the number of clusters K and to compute the evaluation metrics.
 
-## Usage
+## 🚀 Usage
 
 The full pipeline has two commands: `train.py` trains and evaluates the models, and `analysis.py`
 builds the tables and figures from the saved outputs, without running the models again.
@@ -125,6 +132,19 @@ Completed runs are skipped, so an interrupted experiment can be restarted with t
 
 ## 🗂️ Data and Resources
 The data used in this study are available in the [UCR Time Series Classification Archive](https://timeseriesclassification.com/index.php).
+
+## 📝 Citation
+
+The paper is currently under review. If you use this code, please cite:
+
+```bibtex
+@article{cerciello2026mftc,
+  title   = {MFTC: Mamba-based Fuzzy Teacher-guided Clustering for multivariate time series},
+  author  = {Cerciello, Donato and Schiavo, Leonardo and Panizo-Lledot, Angel and Huertas Tato, Javier and Camacho, David},
+  year    = {2026},
+  note    = {Under review}
+}
+```
 
 ## 💎 Acknowledgment
 
